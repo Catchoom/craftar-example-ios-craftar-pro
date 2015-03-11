@@ -40,6 +40,7 @@
 		A03F93471990D270003ED8B1 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A03F93461990D270003ED8B1 /* libc++.dylib */; };
 		A053E8DC1A24817F00A30C49 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A053E8DB1A24817F00A30C49 /* QuartzCore.framework */; };
 		A084A2FC1875BD1100EF452B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A084A2FB1875BD1100EF452B /* Main.storyboard */; };
+		A0851E291AAF0D7300D3B2B0 /* pin.png in Resources */ = {isa = PBXBuildFile; fileRef = A0851E281AAF0D7300D3B2B0 /* pin.png */; };
 		A0D096821855E42100D231F0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096811855E42100D231F0 /* MobileCoreServices.framework */; };
 		A0D096841855E42F00D231F0 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096831855E42F00D231F0 /* SystemConfiguration.framework */; };
 		A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096871855E45000D231F0 /* AVFoundation.framework */; };
@@ -103,6 +104,7 @@
 		A03F93461990D270003ED8B1 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A053E8DB1A24817F00A30C49 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A084A2FB1875BD1100EF452B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		A0851E281AAF0D7300D3B2B0 /* pin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pin.png; path = Resources/pin.png; sourceTree = "<group>"; };
 		A0D096811855E42100D231F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		A0D096831855E42F00D231F0 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A0D096851855E43D00D231F0 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
@@ -212,7 +214,8 @@
 		A01F3DAB18460A88003D8D62 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A0031A021BBD38CE009FE55E /* 8d4fc8ab15a94ad981234925f85498d2.zip */,
+				A0851E281AAF0D7300D3B2B0 /* pin.png */,
+				A053E8D91A2480DE00A30C49 /* CraftARSDK.bundle */,
 				A039ABE118AA6C450050D6F7 /* AR_programmatically_content.png */,
 				A039ABBB18A4F0510050D6F7 /* AR_from_CraftAR.png */,
 				A039ABBC18A4F0510050D6F7 /* craftAR_c.png */,
@@ -328,6 +331,7 @@
 				A0031A011BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard in Resources */,
 				A039ABE218AA6C450050D6F7 /* AR_programmatically_content.png in Resources */,
 				A039ABD018A4F0510050D6F7 /* questionMark.png in Resources */,
+				A0851E291AAF0D7300D3B2B0 /* pin.png in Resources */,
 				A039ABC818A4F0510050D6F7 /* craftAR_c.png in Resources */,
 				A039ABCC18A4F0510050D6F7 /* craftAR_logo@2x.png in Resources */,
 				A01F3E0D1847B0E4003D8D62 /* AR_Programmatically.storyboard in Resources */,

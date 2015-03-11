@@ -31,6 +31,10 @@
     CraftARSDK *mSDK;
     CraftARCloudRecognition *mCloudRecognition;
     CraftARTracking* mTracking;
+
+    CraftARItemAR *myItem;
+    bool _isTrackingEnabled;
+    bool _isPinned;
 }
 @end
 
@@ -175,6 +179,18 @@
             break;
         default:
             break;
+    }
+}
+
+- (IBAction)pinContents:(id)sender {
+    if (!_isPinned && _isTrackingEnabled) {
+        myItem.drawOffTracking = YES;
+        _isTrackingEnabled = false;
+        [_tracking stopTracking];
+    } else {
+        myItem.drawOffTracking = NO;
+        _isTrackingEnabled = true;
+        [_tracking startTracking];
     }
 }
 
