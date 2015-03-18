@@ -27,6 +27,6 @@
 @property (weak, nonatomic) IBOutlet UIView *videoPreviewView;
 @property (weak, nonatomic) IBOutlet UIView *_scanOverlay;
 
-- (IBAction)pinContents:(id)sender;
+- (IBAction)attachContents:(id)sender;
 
 @end

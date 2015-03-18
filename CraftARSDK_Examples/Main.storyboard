@@ -10,7 +10,6 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="aRD-Yj-etQ" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Nju-Db-ZNQ">
-                        <rect key="frame" x="0.0" y="0.0" width="0.0" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textAttributes key="titleTextAttributes">

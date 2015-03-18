@@ -34,7 +34,7 @@
 
     CraftARItemAR *myItem;
     bool _isTrackingEnabled;
-    bool _isPinned;
+    bool _isAttached;
 }
 @end
 
@@ -182,8 +182,8 @@
     }
 }
 
-- (IBAction)pinContents:(id)sender {
-    if (!_isPinned && _isTrackingEnabled) {
+- (IBAction)attachContents:(id)sender {
+    if (!_isAttached && _isTrackingEnabled) {
         myItem.drawOffTracking = YES;
         _isTrackingEnabled = false;
         [_tracking stopTracking];
