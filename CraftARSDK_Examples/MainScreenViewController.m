@@ -21,7 +21,6 @@
 // DEALINGS IN THE SOFTWARE.
 
 #import "MainScreenViewController.h"
-#import <CraftARSDK/CraftARSDK.h>
 
 @interface MainScreenViewController ()
 
@@ -36,9 +35,6 @@
 }
 
 - (IBAction)buttonPressed:(id)sender {
-    
-    [[[CraftARSDK sharedCraftARSDK] getCloudRecognitionInterface] setToken:@"craftarexamples1"];
-    
     UIViewController *target;
     if (sender == self._helloWorldButton) {
         UIStoryboard *exampleStoryBoard = [UIStoryboard storyboardWithName:@"AR_Programmatically" bundle:nil];
@@ -52,6 +48,10 @@
         UIStoryboard *exampleStoryBoard = [UIStoryboard storyboardWithName:@"CloudRecognition" bundle:nil];
         target = (UIViewController *)[exampleStoryBoard instantiateViewControllerWithIdentifier:@"CloudRecognitionOneShotViewController"];
         target.navigationItem.title = @"Recognition Only";
+    } else if (sender == self._onDeviceAR) {
+        UIStoryboard *exampleStoryBoard = [UIStoryboard storyboardWithName:@"On-device_Augmented_Reality" bundle:nil];
+        target = (UIViewController *)[exampleStoryBoard instantiateViewControllerWithIdentifier:@"OnDeviceAugmentedReality"];
+        target.navigationItem.title = @"On-device AR";
     }
     [self.navigationController pushViewController:target animated:YES];
 }

@@ -22,17 +22,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainScreenViewController : UIViewController
+@interface OnDeviceAugmentedReality: UIViewController
 
-@property (weak, nonatomic) IBOutlet UIButton* _helloWorldButton;
-@property (weak, nonatomic) IBOutlet UIButton* _contentCreationButton;
-@property (weak, nonatomic) IBOutlet UIButton* _recognitionOnlyButton;
-@property (weak, nonatomic) IBOutlet UIButton* _onDeviceAR;
-
-- (IBAction)buttonPressed:(id)sender;
-
-
-- (IBAction)signUpURL:(id)sender;
-- (IBAction)craftARProductURL:(id)sender;
+@property (weak, nonatomic) IBOutlet UIView *videoPreviewView;
+@property (weak, nonatomic) IBOutlet UIView *_scanOverlay;
 
 @end

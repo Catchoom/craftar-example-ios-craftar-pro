@@ -21,20 +21,21 @@
 // DEALINGS IN THE SOFTWARE.
 
 
-#import "AR_ProgrammaticallyViewController.h"
-#import <CraftARAugmentedRealitySDK/CraftARSDK_AR.h>
-#import <CraftARAugmentedRealitySDK/CraftARCloudRecognition.h>
-#import <CraftARAugmentedRealitySDK/CraftARTracking.h>
-#import <CraftARAugmentedRealitySDK/CraftARTrackingContentImage.h>
+#import "On-Device_Augmented_Reality.h"
 
-@interface AR_ProgrammaticallyViewController ()<CraftARSDKProtocol, CraftARContentEventsProtocol, SearchProtocol, CraftARTrackingEventsProtocol> {
+#import <CraftARAugmentedRealitySDK/CraftARSDK_AR.h>
+#import <CraftARAugmentedRealitySDK/CraftARCollectionManager.h>
+#import <CraftARAugmentedRealitySDK/CraftARTracking.h>
+
+@interface OnDeviceAugmentedReality () <CraftARSDKProtocol, CraftARContentEventsProtocol, CraftARTrackingEventsProtocol> {
     CraftARSDK_AR *mSDK;
-    CraftARCloudRecognition *mCloudRecognition;
+    CraftARCollectionManager* mCollectionManager;
+    CraftAROnDeviceCollection* mARCollection;
     CraftARTracking* mTracking;
 }
 @end
 
-@implementation AR_ProgrammaticallyViewController
+@implementation OnDeviceAugmentedReality
 
 #pragma mark view initialization and events
 
@@ -55,10 +56,6 @@
     mSDK = [CraftARSDK_AR sharedCraftARSDK_AR];
     mSDK.delegate = self;
     
-    // Get the Cloud recognition module and set 'self' as delegate to receive the SearchProtocol callbacks
-    mCloudRecognition = [CraftARCloudRecognition sharedCloudImageRecognition];
-    mCloudRecognition.delegate = self;
-    
     // Get the tracking module and become delegate to receive tracking events
     mTracking = [CraftARTracking sharedTracking];
     mTracking.delegate = self;
@@ -73,73 +70,52 @@
 - (void) viewWillDisappear:(BOOL)animated {
     // stop the capture when the view is disappearing. This releases the camera resources.
     [mSDK stopCapture];
+    // Remove all items from the Tracking when leaving the view.
+    [mTracking removeAllARItems];
     [super viewWillDisappear:animated];
 }
 
 #pragma mark -
 
 
-#pragma mark Finder mode AR implementation
+#pragma mark On-device AR implementation
 
 - (void) didStartCapture {
+    __block OnDeviceAugmentedReality* mySelf = self;
     
-    // The SDK manages the Single shot search and the Finder Mode search, the cloud recognition is the delegate for doing the searches.
-    // This needs to be done after the camera initialization
-    mSDK.searchControllerDelegate = mCloudRecognition;
     
-    // Set the colleciton we will search using the token.
-    __block AR_ProgrammaticallyViewController* mySelf = self;
-    [mCloudRecognition setCollectionWithToken:@"craftarexamples1" onSuccess:^{
-        NSLog(@"Ready to search!");
-        mySelf._scanOverlay.hidden = false;
-        
-        // The Search methods (Single shot search and Finder Mode) are controlled by
-        // the SDK. The searchControllerDelegate will receive the camera events and search
-        // with the picture or image frames coming from the camera.
-        [[CraftARSDK_AR sharedCraftARSDK_AR] startFinder];
-    } andOnError:^(NSError *error) {
-        NSLog(@"Error setting token: %@", error.localizedDescription);
+    // The collection manager allows to manage on-device collections
+    mCollectionManager = [CraftARCollectionManager sharedCollectionManager];
+    
+    // In this case, we downloaded an on-device Bundle
+    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"8d4fc8ab15a94ad981234925f85498d2" ofType:@"zip"];
+    
+    // We add the on-device bundle to the collection manager
+    [mCollectionManager addCollectionFromBundle:bundle withOnProgress:^(float progress) {
+        NSLog(@"Progress: %f", progress);
+    } andOnSuccess:^(CraftAROnDeviceCollection *collection) {
+        mARCollection = collection;
+        // Ready to retrieve and Add AR items to the tracking, for now, just do it after 1 second
+        //[mySelf performSelector:@selector(startOfflineARTracking) withObject:mySelf afterDelay:1];
+        [mySelf startOfflineARTracking];
+    } andOnError:^(CraftARError *error) {
+        NSLog(@"Error adding bundle %@", error.localizedDescription);
     }];
 }
 
-- (void) didGetSearchResults:(NSArray *)results {
-    
-    bool haveARItems = NO;
-    
-    if ([results count] >= 1) {
-        [mSDK stopFinder];
-        // Found one result, launch its content on a webView:
-        CraftARSearchResult *result = [results objectAtIndex:0];
-        
-        // Each result has one item
-        CraftARItem* item = result.item;
-        
-        if ([item isKindOfClass:[CraftARItemAR class]]) {
-            CraftARItemAR* arItem = (CraftARItemAR*)item;
-            
-            // Local content creation
-            CraftARTrackingContentImage *image = [[CraftARTrackingContentImage alloc] initWithImageNamed:@"AR_programmatically_content" ofType:@"png"];
-            image.wrapMode = CRAFTAR_TRACKING_WRAP_ASPECT_FIT;
-            [arItem addContent:image];
-            
-            NSError *err = [mTracking addARItem:arItem];
-            if (err) {
-                NSLog(@"Error adding AR item: %@", err.localizedDescription);
-            }
-            haveARItems = YES;
-        }
-        if (haveARItems) {
-            self._scanOverlay.hidden = YES;
-            [mTracking startTracking];
-        } else {
-            [mSDK startFinder];
-        }
+- (void) startOfflineARTracking {
+    NSError* error;
+    CraftARItemAR* arItem = (CraftARItemAR*)[mARCollection getItem:@"e11fbe6e9cf342ec950cac6e0f4c5cff" andError:&error];
+    if (error != nil) {
+        NSLog(@"Error getting item: %@", error.localizedDescription);
+    } else {
+        [mTracking addARItem:arItem];
+        [mTracking startTrackingWithTimeout: 15.0];
     }
 }
 
-- (void) didFailSearchWithError:(NSError *)error {
-    // Check the error type
-    NSLog(@"Error calling CRS: %@", [error localizedDescription]);
+- (void) trackingTimeoutOver {
+    NSLog(@"TRACKING TIMEOUT OVER!!");
 }
 
 #pragma mark -
@@ -151,11 +127,13 @@
 
 - (void) didStartTrackingItem:(CraftARItemAR *)item {
     NSLog(@"Start tracking: %@", item.name);
+    self._scanOverlay.hidden = YES;
 }
 
 - (void) didStopTrackingItem:(CraftARItemAR *)item {
     NSLog(@"Stop tracking: %@", item.name);
 }
+
 
 // The CraftARContentEventsProtocol protocol allows to receive events for specific contents
 // You can navigate to the parent item of a content using content.parentARItem
@@ -180,11 +158,12 @@
 
 
 #pragma mark -
-
+ 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 @end

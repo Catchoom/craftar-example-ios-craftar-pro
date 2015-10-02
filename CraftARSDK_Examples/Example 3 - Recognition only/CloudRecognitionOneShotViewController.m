@@ -6,19 +6,20 @@
 //
 
 #import "CloudRecognitionOneShotViewController.h"
-#import <CraftARSDK/CraftARSDK.h>
-#import <CraftARSDK/CraftARItem.h>
+#import <CraftARAugmentedRealitySDK/CraftARSDK_AR.h>
+#import <CraftARAugmentedRealitySDK/CraftARCloudRecognition.h>
 
-@interface CloudRecognitionOneShotViewController () <CraftARSDKProtocol, CraftARCloudRecognitionProtocol> {
-    CraftARSDK *_sdk;
-    CraftARCloudRecognition *_crs;
+
+@interface CloudRecognitionOneShotViewController () <CraftARSDKProtocol, CraftARContentEventsProtocol, SearchProtocol> {
+    CraftARSDK_AR *mSDK;
+    CraftARCloudRecognition *mCloudRecognition;
 }
 
 @end
 
 @implementation CloudRecognitionOneShotViewController
 
-#pragma mark view initialization
+#pragma mark view initialization and events
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -33,19 +34,25 @@
 {
     [super viewDidLoad];
     
-    // setup the CraftAR SDK
-    _sdk = [CraftARSDK sharedCraftARSDK];
-    _sdk.delegate = self;
+    // Get the instance of the SDK and become delegate
+    mSDK = [CraftARSDK_AR sharedCraftARSDK_AR];
+    mSDK.delegate = self;
     
-    _crs = [_sdk getCloudRecognitionInterface];
-    _crs.delegate = self;
-    
+    // Get the Cloud recognition module and set 'self' as delegate to receive the SearchProtocol callbacks
+    mCloudRecognition = [CraftARCloudRecognition sharedCloudImageRecognition];
+    mCloudRecognition.delegate = self;
 }
 
 - (void) viewWillAppear:(BOOL) animated {
     [super viewWillAppear:animated];
-    // Start Video Preview for search and tracking
-    [_sdk startCaptureWithView:self._preview];
+    // Start the camera capture to be able to perform Single Shot searches
+    [mSDK startCaptureWithView:self._preview];
+}
+
+- (void) viewWillDisappear:(BOOL)animated {
+    // stop the capture when the view is disappearing. This releases the camera resources.
+    [mSDK stopCapture];
+    [super viewWillDisappear:animated];
 }
 
 #pragma mark -
@@ -55,22 +62,40 @@
 
 - (void) didStartCapture {
     self._previewOverlay.hidden = NO;
+    
+    // The SDK manages the Single shot search and the Finder Mode search, the cloud recognition is the delegate for doing the searches.
+    // This needs to be done after the camera initialization
+    mSDK.searchControllerDelegate = mCloudRecognition;
+    
+    // Set the colleciton we will search using the token.
+    [mCloudRecognition setCollectionWithToken:@"craftarexamples1" onSuccess:^{
+        NSLog(@"Ready to search!");
+    } andOnError:^(NSError *error) {
+        NSLog(@"Error setting token: %@", error.localizedDescription);
+    }];
 }
 
 - (IBAction)snapPhotoToSearch:(id)sender {
     self._previewOverlay.hidden = YES;
     self._scanningOverlay.hidden = NO;
     [self._scanningOverlay setNeedsDisplay];
-    [_crs singleShotSearch];
+    
+    // The Search methods (Single shot search and Finder Mode) are controlled by
+    // the SDK. The searchControllerDelegate will receive the camera events and search
+    // with the picture or image frames coming from the camera.
+    [mSDK singleShotSearch];
     
 }
 
-- (void) didGetSearchResults:(NSArray *)resultItems {
+- (void) didGetSearchResults:(NSArray *)results {
     self._scanningOverlay.hidden = YES;
     
-    if ([resultItems count] >= 1) {
-        // Found one item, launch its content on a webView:
-        CraftARItem *item = [resultItems objectAtIndex:0];
+    if ([results count] >= 1) {
+        // Found one result, launch its content on a webView:
+        CraftARSearchResult *result = [results objectAtIndex:0];
+        
+        // Each result has one item
+        CraftARItem* item = result.item;
         
         // Open URL in Webview
         UIViewController *webViewController = [[UIViewController alloc] init];
@@ -79,53 +104,34 @@
         uiWebView.scalesPageToFit = YES;
         [webViewController.view addSubview: uiWebView];
         [self.navigationController pushViewController:webViewController animated:YES];
-        self._previewOverlay.hidden = NO;
-        self._scanningOverlay.hidden = YES;
-        [_sdk unfreezeCapture];
-        
     } else {
         UIAlertView *alert = [[UIAlertView alloc] init];
         [alert setTitle:@"Nothing found"];
         [alert setDelegate:self];
         [alert addButtonWithTitle:@"Ok"];
         [alert show];
-        self._scanningOverlay.hidden = YES;
     }
-}
-
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    
+    // The single shot search freezes the capture, restart it now
     self._previewOverlay.hidden = NO;
-    [_sdk unfreezeCapture];
+    self._scanningOverlay.hidden = YES;
+    [[mSDK getCamera] restartCapture];
 }
 
-- (void) didFailWithError:(CraftARSDKError *)error {
+- (void) didFailSearchWithError:(NSError *)error {
     // Check the error type
     NSLog(@"Error calling CRS: %@", [error localizedDescription]);
     self._previewOverlay.hidden = NO;
     self._scanningOverlay.hidden = YES;
-    [_sdk unfreezeCapture];
+    // The single shot search freezes the capture, restart it now
+    [[mSDK getCamera] restartCapture];
 }
 
-- (void) didValidateToken {
-    // Token valid, do nothing
-}
-
-#pragma mark -
-
-
-#pragma mark view lifecycle
-
-- (void) viewWillDisappear:(BOOL)animated {
-    [_sdk stopCapture];
-    [super viewWillDisappear:animated];
-}
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-#pragma mark -
 
 @end
