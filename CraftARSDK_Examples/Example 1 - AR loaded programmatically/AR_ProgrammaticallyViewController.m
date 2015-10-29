@@ -22,13 +22,13 @@
 
 
 #import "AR_ProgrammaticallyViewController.h"
-#import <CraftARAugmentedRealitySDK/CraftARSDK_AR.h>
+#import <CraftARAugmentedRealitySDK/CraftARSDK.h>
 #import <CraftARAugmentedRealitySDK/CraftARCloudRecognition.h>
 #import <CraftARAugmentedRealitySDK/CraftARTracking.h>
 #import <CraftARAugmentedRealitySDK/CraftARTrackingContentImage.h>
 
 @interface AR_ProgrammaticallyViewController ()<CraftARSDKProtocol, CraftARContentEventsProtocol, SearchProtocol, CraftARTrackingEventsProtocol> {
-    CraftARSDK_AR *mSDK;
+    CraftARSDK *mSDK;
     CraftARCloudRecognition *mCloudRecognition;
     CraftARTracking* mTracking;
 }
@@ -52,7 +52,7 @@
     [super viewDidLoad];
     
     // Get the instance of the SDK and become delegate
-    mSDK = [CraftARSDK_AR sharedCraftARSDK_AR];
+    mSDK = [CraftARSDK sharedCraftARSDK];
     mSDK.delegate = self;
     
     // Get the Cloud recognition module and set 'self' as delegate to receive the SearchProtocol callbacks
@@ -96,7 +96,7 @@
         // The Search methods (Single shot search and Finder Mode) are controlled by
         // the SDK. The searchControllerDelegate will receive the camera events and search
         // with the picture or image frames coming from the camera.
-        [[CraftARSDK_AR sharedCraftARSDK_AR] startFinder];
+        [[CraftARSDK sharedCraftARSDK] startFinder];
     } andOnError:^(NSError *error) {
         NSLog(@"Error setting token: %@", error.localizedDescription);
     }];

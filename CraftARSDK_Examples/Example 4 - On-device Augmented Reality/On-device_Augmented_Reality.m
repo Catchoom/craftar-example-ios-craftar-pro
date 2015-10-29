@@ -23,12 +23,12 @@
 
 #import "On-Device_Augmented_Reality.h"
 
-#import <CraftARAugmentedRealitySDK/CraftARSDK_AR.h>
+#import <CraftARAugmentedRealitySDK/CraftARSDK.h>
 #import <CraftARAugmentedRealitySDK/CraftARCollectionManager.h>
 #import <CraftARAugmentedRealitySDK/CraftARTracking.h>
 
 @interface OnDeviceAugmentedReality () <CraftARSDKProtocol, CraftARContentEventsProtocol, CraftARTrackingEventsProtocol> {
-    CraftARSDK_AR *mSDK;
+    CraftARSDK *mSDK;
     CraftARCollectionManager* mCollectionManager;
     CraftAROnDeviceCollection* mARCollection;
     CraftARTracking* mTracking;
@@ -53,7 +53,7 @@
     [super viewDidLoad];
     
     // Get the instance of the SDK and become delegate
-    mSDK = [CraftARSDK_AR sharedCraftARSDK_AR];
+    mSDK = [CraftARSDK sharedCraftARSDK];
     mSDK.delegate = self;
     
     // Get the tracking module and become delegate to receive tracking events

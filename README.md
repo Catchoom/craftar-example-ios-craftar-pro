@@ -41,8 +41,8 @@ This example works with the Catchoom SDK version 2.3. If you have an earlier ver
 1.  Download the [CraftAR SDK](http://catchoom.com/product/mobile-sdk/) for iOS.
 2.  Unzip the package
 3.  Using Finder, drag the following files into the project in ExternalFrameworks directory:
- * CraftARSDK.framework
- * CraftARSDK.bundle
+ * CraftARAugmentedRealitySDK.framework
+ * CraftARResourcesAR.bundle
  * Pods.framework
  
  

@@ -6,12 +6,12 @@
 //
 
 #import "CloudRecognitionOneShotViewController.h"
-#import <CraftARAugmentedRealitySDK/CraftARSDK_AR.h>
+#import <CraftARAugmentedRealitySDK/CraftARSDK.h>
 #import <CraftARAugmentedRealitySDK/CraftARCloudRecognition.h>
 
 
 @interface CloudRecognitionOneShotViewController () <CraftARSDKProtocol, CraftARContentEventsProtocol, SearchProtocol> {
-    CraftARSDK_AR *mSDK;
+    CraftARSDK *mSDK;
     CraftARCloudRecognition *mCloudRecognition;
 }
 
@@ -35,7 +35,7 @@
     [super viewDidLoad];
     
     // Get the instance of the SDK and become delegate
-    mSDK = [CraftARSDK_AR sharedCraftARSDK_AR];
+    mSDK = [CraftARSDK sharedCraftARSDK];
     mSDK.delegate = self;
     
     // Get the Cloud recognition module and set 'self' as delegate to receive the SearchProtocol callbacks
