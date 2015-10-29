@@ -23,7 +23,7 @@ examples that show how to use the SDK.
 To run the examples follow these steps:
  1.  Open the CraftARSDK_Examples.xcodeproj project.
  2.  Integrate the CraftARSDK into the xCode project (see [below](#step-by-step-guide)).
- 3.  Select an iOS 6 or 7 device (notice that the project will not
+ 3.  Select an iOS 7+ device (notice that the project will not
      compile for the simulator).
  4.  Hit the run button.
 
