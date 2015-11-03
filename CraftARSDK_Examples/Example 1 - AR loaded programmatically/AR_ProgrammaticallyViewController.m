@@ -119,14 +119,14 @@
         CraftARItem* item = result.item;
         
         if ([item isKindOfClass:[CraftARItemAR class]]) {
-            CraftARItemAR* arItem = (CraftARItemAR*)item;
+            myItem = (CraftARItemAR*)item;
             
             // Local content creation
             CraftARTrackingContentImage *image = [[CraftARTrackingContentImage alloc] initWithImageNamed:@"AR_programmatically_content" ofType:@"png"];
             image.wrapMode = CRAFTAR_TRACKING_WRAP_ASPECT_FIT;
-            [arItem addContent:image];
+            [myItem addContent:image];
             
-            NSError *err = [mTracking addARItem:arItem];
+            NSError *err = [mTracking addARItem:myItem];
             if (err) {
                 NSLog(@"Error adding AR item: %@", err.localizedDescription);
             }
@@ -186,11 +186,11 @@
     if (!_isAttached && _isTrackingEnabled) {
         myItem.drawOffTracking = YES;
         _isTrackingEnabled = false;
-        [_tracking stopTracking];
+        [mTracking stopTracking];
     } else {
         myItem.drawOffTracking = NO;
         _isTrackingEnabled = true;
-        [_tracking startTracking];
+        [mTracking startTracking];
     }
 }
 

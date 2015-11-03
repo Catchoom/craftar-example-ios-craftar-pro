@@ -8,13 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		A00319F71BBC330B009FE55E /* CraftARResourcesAR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0FB2EC01BBC2BBF00E6A12F /* CraftARResourcesAR.bundle */; };
-		A00319F81BBC5639009FE55E /* AR_fromCraftARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A039ABDB18A91F410050D6F7 /* AR_fromCraftARViewController.m */; settings = {ASSET_TAGS = (); }; };
-		A00319F91BBD1D9A009FE55E /* AR_ProgrammaticallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3E061847B0E4003D8D62 /* AR_ProgrammaticallyViewController.m */; settings = {ASSET_TAGS = (); }; };
+		A00319F81BBC5639009FE55E /* AR_fromCraftARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A039ABDB18A91F410050D6F7 /* AR_fromCraftARViewController.m */; };
+		A00319F91BBD1D9A009FE55E /* AR_ProgrammaticallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3E061847B0E4003D8D62 /* AR_ProgrammaticallyViewController.m */; };
 		A00319FB1BBD28F8009FE55E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00319FA1BBD28F8009FE55E /* CoreLocation.framework */; };
-		A0031A001BBD36F0009FE55E /* On-device_Augmented_Reality.m in Sources */ = {isa = PBXBuildFile; fileRef = A00319FE1BBD36F0009FE55E /* On-device_Augmented_Reality.m */; settings = {ASSET_TAGS = (); }; };
-		A0031A011BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00319FF1BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard */; settings = {ASSET_TAGS = (); }; };
-		A0031A031BBD38CE009FE55E /* 8d4fc8ab15a94ad981234925f85498d2.zip in Resources */ = {isa = PBXBuildFile; fileRef = A0031A021BBD38CE009FE55E /* 8d4fc8ab15a94ad981234925f85498d2.zip */; settings = {ASSET_TAGS = (); }; };
-		A0031A051BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0031A041BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework */; settings = {ASSET_TAGS = (); }; };
+		A0031A001BBD36F0009FE55E /* On-device_Augmented_Reality.m in Sources */ = {isa = PBXBuildFile; fileRef = A00319FE1BBD36F0009FE55E /* On-device_Augmented_Reality.m */; };
+		A0031A011BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00319FF1BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard */; };
+		A0031A051BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0031A041BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework */; };
 		A01F3D821845FA5A003D8D62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A01F3D801845FA5A003D8D62 /* InfoPlist.strings */; };
 		A01F3D841845FA5A003D8D62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D831845FA5A003D8D62 /* main.m */; };
 		A01F3D881845FA5A003D8D62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D871845FA5A003D8D62 /* AppDelegate.m */; };
@@ -67,7 +66,6 @@
 		A00319FD1BBD36F0009FE55E /* On-device_Augmented_Reality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "On-device_Augmented_Reality.h"; path = "Example 4 - On-device Augmented Reality/On-device_Augmented_Reality.h"; sourceTree = "<group>"; };
 		A00319FE1BBD36F0009FE55E /* On-device_Augmented_Reality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "On-device_Augmented_Reality.m"; path = "Example 4 - On-device Augmented Reality/On-device_Augmented_Reality.m"; sourceTree = "<group>"; };
 		A00319FF1BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "On-device_Augmented_Reality.storyboard"; path = "Example 4 - On-device Augmented Reality/On-device_Augmented_Reality.storyboard"; sourceTree = "<group>"; };
-		A0031A021BBD38CE009FE55E /* 8d4fc8ab15a94ad981234925f85498d2.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = 8d4fc8ab15a94ad981234925f85498d2.zip; path = Resources/8d4fc8ab15a94ad981234925f85498d2.zip; sourceTree = "<group>"; };
 		A0031A041BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CraftARAugmentedRealitySDK.framework; path = CraftARSDK_Examples/ExternalFrameworks/CraftARAugmentedRealitySDK.framework; sourceTree = "<group>"; };
 		A01F3D741845FA5A003D8D62 /* CraftARSDK_Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CraftARSDK_Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01F3D7F1845FA5A003D8D62 /* CraftARSDK_Examples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CraftARSDK_Examples-Info.plist"; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 			isa = PBXGroup;
 			children = (
 				A0851E281AAF0D7300D3B2B0 /* pin.png */,
-				A053E8D91A2480DE00A30C49 /* CraftARSDK.bundle */,
 				A039ABE118AA6C450050D6F7 /* AR_programmatically_content.png */,
 				A039ABBB18A4F0510050D6F7 /* AR_from_CraftAR.png */,
 				A039ABBC18A4F0510050D6F7 /* craftAR_c.png */,
@@ -337,7 +334,6 @@
 				A01F3E0D1847B0E4003D8D62 /* AR_Programmatically.storyboard in Resources */,
 				A039ABE418AA6CC00050D6F7 /* AR programmatically.jpg in Resources */,
 				A039ABB4189FE2490050D6F7 /* CloudRecognition.storyboard in Resources */,
-				A0031A031BBD38CE009FE55E /* 8d4fc8ab15a94ad981234925f85498d2.zip in Resources */,
 				A039ABC718A4F0510050D6F7 /* AR_from_CraftAR.png in Resources */,
 				A039ABCE18A4F0510050D6F7 /* play.png in Resources */,
 				A039ABD518A4F2D60050D6F7 /* AR from CraftAR service.jpg in Resources */,
