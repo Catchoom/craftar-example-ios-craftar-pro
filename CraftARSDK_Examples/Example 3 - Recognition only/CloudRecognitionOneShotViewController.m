@@ -63,12 +63,13 @@
 - (void) didStartCapture {
     self._previewOverlay.hidden = NO;
     
-    // The SDK manages the Single shot search and the Finder Mode search, the cloud recognition is the delegate for doing the searches.
+    // The SDK manages the Single shot search and the Finder Mode search, the cloud recognition's
+    // search controller is the delegate for doing the searches.
     // This needs to be done after the camera initialization
-    mSDK.searchControllerDelegate = mCloudRecognition;
+    mSDK.searchControllerDelegate = mCloudRecognition.mSearchController;
     
     // Set the colleciton we will search using the token.
-    [mCloudRecognition setCollectionWithToken:@"craftarexamples1" onSuccess:^{
+    [mCloudRecognition setCollectionWithToken:@"augmentedreality" onSuccess:^{
         NSLog(@"Ready to search!");
     } andOnError:^(NSError *error) {
         NSLog(@"Error setting token: %@", error.localizedDescription);

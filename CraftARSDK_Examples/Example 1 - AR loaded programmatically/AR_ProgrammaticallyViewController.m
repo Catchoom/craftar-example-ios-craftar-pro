@@ -83,13 +83,14 @@
 
 - (void) didStartCapture {
     
-    // The SDK manages the Single shot search and the Finder Mode search, the cloud recognition is the delegate for doing the searches.
+    // The SDK manages the Single shot search and the Finder Mode search, the cloud recognition's
+    // search controller is the delegate for doing the searches.
     // This needs to be done after the camera initialization
-    mSDK.searchControllerDelegate = mCloudRecognition;
+    mSDK.searchControllerDelegate = mCloudRecognition.mSearchController;
     
     // Set the colleciton we will search using the token.
     __block AR_ProgrammaticallyViewController* mySelf = self;
-    [mCloudRecognition setCollectionWithToken:@"craftarexamples1" onSuccess:^{
+    [mCloudRecognition setCollectionWithToken:@"augmentedreality" onSuccess:^{
         NSLog(@"Ready to search!");
         mySelf._scanOverlay.hidden = false;
         
