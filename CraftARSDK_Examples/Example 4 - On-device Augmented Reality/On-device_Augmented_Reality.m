@@ -88,7 +88,7 @@
     mCollectionManager = [CraftARCollectionManager sharedCollectionManager];
     
     // In this case, we downloaded an on-device Bundle
-    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"8d4fc8ab15a94ad981234925f85498d2" ofType:@"zip"];
+    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"augmentedreality" ofType:@"zip"];
     
     // We add the on-device bundle to the collection manager
     [mCollectionManager addCollectionFromBundle:bundle withOnProgress:^(float progress) {
@@ -103,15 +103,19 @@
     }];
 }
 
-- (void) startOfflineARTracking {
-    NSError* error;
-    CraftARItemAR* arItem = (CraftARItemAR*)[mARCollection getItem:@"e11fbe6e9cf342ec950cac6e0f4c5cff" andError:&error];
-    if (error != nil) {
-        NSLog(@"Error getting item: %@", error.localizedDescription);
-    } else {
-        [mTracking addARItem:arItem];
-        [mTracking startTrackingWithTimeout: 15.0];
-    }
+- (void) startOfflineARTracking {    
+    // Add the items in a background queue to avoid blocking the main thread
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        [[mARCollection listItems] enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            NSError* error;
+            CraftARItem* arItem = (CraftARItemAR*)[mARCollection getItem:(NSString*)obj andError:&error];
+            if (arItem != nil && [arItem isKindOfClass:CraftARItemAR.class]) {
+                [mTracking addARItem: (CraftARItemAR*)arItem];
+            }
+        }];
+    });
+    
+    [mTracking startTrackingWithTimeout: 15.0];
 }
 
 - (void) trackingTimeoutOver {
