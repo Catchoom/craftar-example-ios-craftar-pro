@@ -73,6 +73,8 @@
 - (void) viewWillDisappear:(BOOL)animated {
     // stop the capture when the view is disappearing. This releases the camera resources.
     [mSDK stopCapture];
+    // Remove all items from the Tracking when leaving the view.
+    [mTracking removeAllARItems];
     [super viewWillDisappear:animated];
 }
 
