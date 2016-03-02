@@ -11,6 +11,24 @@ can use our online web panel or APIs, to upload images to be recognised and set
 AR content to display upon recognition in your CraftAR-powered
 app.
 
+### Examples
+This project includes 4 examples showing different ways of using the SDK:
+
+##### [1 AR Loaded Programmatically](CraftARSDK_Examples/Example%201%20-%20AR%20loaded%20programmatically)
+This example shows how to load Augmented Reality contents programmatically on top of a reference image
+found using Cloud Recognition.
+
+##### [2 AR from CraftAR](CraftARSDK_Examples/Example%202%20-%20AR%20from%20CraftAR)
+This example shows how the SDK is able to load AR contents automatically from a scene created usins the
+CraftAR Creator.
+
+##### [3 Cloud Image Recognition](Example%203%20-%20Recognition%20only)
+In this example we show that the AR SDK can also be used to find Image Recognition items
+and perform actions upon detection of a non-AR item.
+
+##### [4 On-device Augmented Reality](Example%204%20-%20On-device%20Augmented%20Reality)
+This example shows how to add a collection of AR items locally into the device and load
+them to start an Augmented Reality experience.
 
 ### How to use the examples
 
