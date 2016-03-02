@@ -11,6 +11,7 @@ can use our online web panel or APIs, to upload images to be recognised and set
 AR content to display upon recognition in your CraftAR-powered
 app.
 
+
 ### How to use the examples
 
 This repository contains the project files and source code of some examples
@@ -20,13 +21,16 @@ The examples are included in the SDK distribution with the SDK already linked to
 the project. The best way to use the examples is to [download the SDK](http://catchoom.com/documentation/image-recognition-sdk/ios-image-recognition-sdk/), open the xCode
 project and hit the run button.
 
-### Integrate the SDK in your own project
 
-Follow [this tutorial](http://support.catchoom.com/customer/portal/articles/1887554-tutorial-set-up-the-ios-project-in-xcode) for instructions in how to integrate the SDK in your xCode projects.
-
-#### Requirements
+### Requirements
 
 To build the project or use the library, you will need XCode 7 or newer,
 and at least the iOS 9.0 SDK.
 
 This example works with the Catchoom SDK version 4. If you have an earlier version (3), you can still find the examples in [this branch](https://github.com/Catchoom/craftar-example-ios/tree/sdk-v3).
+
+
+### Integrate the SDK in your own project
+
+Follow [this tutorial](http://support.catchoom.com/customer/portal/articles/1887554-tutorial-set-up-the-ios-project-in-xcode) for instructions in how to integrate the SDK in your xCode projects.
+
