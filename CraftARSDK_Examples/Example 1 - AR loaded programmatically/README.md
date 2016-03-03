@@ -9,7 +9,7 @@ explained in [this tutorial](http://support.catchoom.com/customer/en/portal/arti
 For Augmented reality we started with [this tutorial](http://support.catchoom.com/customer/en/portal/articles/1887500-tutorial-use-tracking-on-ios)
 and added the following code to create some AR content programmatically from local resources:
 
-```
+```objc
 // Local content creation
 CraftARTrackingContentImage *image = [[CraftARTrackingContentImage alloc] 
     initWithImageNamed:@"AR_programmatically_content" ofType:@"png"];
@@ -19,7 +19,7 @@ image.wrapMode = CRAFTAR_TRACKING_WRAP_ASPECT_FIT;
 
 We also implemented the tracking events and content events protocols in order to detect tracking event and touches on contents. First, we set the necessary delegates:
 
-```
+```objc
 // Get the instance of the SDK and become delegate, this will trigger
 // the content touch events if the protocol is implemented
 mSDK = [CraftARSDK sharedCraftARSDK];
@@ -32,7 +32,7 @@ mTracking.delegate = self;
 
 Then, we implemented the methods that receive the events:
 
-```
+```objc
 // Using the CraftARTrackingEventsProtocol and becoming delegate of the CraftARTracking class,
 // you can start receiving globally all tracking events produced by the SDK on the items added.
 
