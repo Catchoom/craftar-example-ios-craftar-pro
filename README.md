@@ -19,7 +19,7 @@ This example shows how to load Augmented Reality contents programmatically on to
 found using Cloud Recognition.
 
 ##### [AR from CraftAR](CraftARSDK_Examples/Example%202%20-%20AR%20from%20CraftAR)
-This example shows how the SDK is able to load AR contents automatically from a scene created usins the
+This example shows how the SDK is able to load AR contents automatically from a scene created using the
 CraftAR Creator.
 
 ##### [Cloud Image Recognition](Example%203%20-%20Recognition%20only)
