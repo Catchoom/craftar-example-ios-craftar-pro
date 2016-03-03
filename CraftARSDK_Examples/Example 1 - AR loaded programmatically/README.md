@@ -19,18 +19,20 @@ image.wrapMode = CRAFTAR_TRACKING_WRAP_ASPECT_FIT;
 [arItem addContent:image];
 ```
 
-We also implemented the tracking events and content events protocols in order to detect tracking event and touches on contents:
+We also implemented the tracking events and content events protocols in order to detect tracking event and touches on contents. First, we set the necessary delegates:
 
 ```
-    // Get the instance of the SDK and become delegate, this will trigger
-    // the content touch events if the protocol is implemented
-    mSDK = [CraftARSDK sharedCraftARSDK];
-    mSDK.delegate = self;
+// Get the instance of the SDK and become delegate, this will trigger
+// the content touch events if the protocol is implemented
+mSDK = [CraftARSDK sharedCraftARSDK];
+mSDK.delegate = self;
 
-    // Get the tracking module and become delegate to receive tracking events
-    mTracking = [CraftARTracking sharedTracking];
-    mTracking.delegate = self;
+// Get the tracking module and become delegate to receive tracking events
+mTracking = [CraftARTracking sharedTracking];
+mTracking.delegate = self;
 ```
+
+Then, we implemented the methods that receive the events:
 
 ```
 // Using the CraftARTrackingEventsProtocol and becoming delegate of the CraftARTracking class,
