@@ -13,7 +13,8 @@ and added the following code to create some AR content programmatically from loc
 
 ```
 // Local content creation
-CraftARTrackingContentImage *image = [[CraftARTrackingContentImage alloc] initWithImageNamed:@"AR_programmatically_content" ofType:@"png"];
+CraftARTrackingContentImage *image = [[CraftARTrackingContentImage alloc] 
+    initWithImageNamed:@"AR_programmatically_content" ofType:@"png"];
 image.wrapMode = CRAFTAR_TRACKING_WRAP_ASPECT_FIT;
 [arItem addContent:image];
 ```
