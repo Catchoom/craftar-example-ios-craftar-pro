@@ -1,9 +1,7 @@
 ## AR loaded programmatically
 
 This example shows how to load Augmented Reality contents 
-programmatically on top of a reference image found using Cloud Recognition.
-
-This project combines two features of the SDK: *Cloud Image Recognition* and *Augmented Reality*.
+programmatically on top of a reference image found using Cloud Recognition. It combines two features of the SDK: *Cloud Image Recognition* and *Augmented Reality*.
 
 For the Cloud Image Recognition we used the Finder Mode search as 
 explained in [this tutorial](http://support.catchoom.com/customer/en/portal/articles/1887576-tutorial-use-cloud-image-recognition-on-ios)
