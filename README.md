@@ -11,6 +11,16 @@ can use our online web panel or APIs, to upload images to be recognised and set
 AR content to display upon recognition in your CraftAR-powered
 app.
 
+### How to use the examples
+
+This repository contains the project files and source code of some examples
+that show how to use the CraftAR Augmented Reality SDK.
+
+The examples **are included in the SDK distribution with the SDK already linked to
+the project**. The best way to use the examples is to [download the SDK](http://catchoom.com/documentation/image-recognition-sdk/ios-image-recognition-sdk/), open the xCode
+project and hit the run button.
+
+
 ### Examples
 This project includes 4 examples showing different ways of using the SDK:
 
@@ -29,16 +39,6 @@ and perform actions upon detection of a non-AR item.
 ##### [On-device Augmented Reality](Example%204%20-%20On-device%20Augmented%20Reality)
 This example shows how to add a collection of AR items locally into the device and load
 them to start an Augmented Reality experience.
-
-### How to use the examples
-
-This repository contains the project files and source code of some examples
-that show how to use the CraftAR Augmented Reality SDK.
-
-The examples are included in the SDK distribution with the SDK already linked to
-the project. The best way to use the examples is to [download the SDK](http://catchoom.com/documentation/image-recognition-sdk/ios-image-recognition-sdk/), open the xCode
-project and hit the run button.
-
 
 ### Requirements
 
