@@ -50,5 +50,5 @@ This example works with the Catchoom SDK version 4. If you have an earlier versi
 
 ### Integrate the SDK in your own project
 
-Follow [this tutorial](http://support.catchoom.com/customer/portal/articles/1887554-tutorial-set-up-the-ios-project-in-xcode) for instructions in how to integrate the SDK in your xCode projects.
+Follow [this tutorial](http://support.catchoom.com/customer/portal/articles/1887554-tutorial-set-up-the-ios-project-in-xcode) for instructions on how to integrate the SDK in your xCode projects.
 
