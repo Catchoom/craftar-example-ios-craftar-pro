@@ -21,8 +21,13 @@
 // DEALINGS IN THE SOFTWARE.
 
 #import "MainScreenViewController.h"
+#import <CraftAROnDeviceIRandARSDK/CraftARCollectionManager.h>
+#import <CraftAROnDeviceIRandARSDK/CraftAROnDeviceIR.h>
 
-@interface MainScreenViewController ()
+@interface MainScreenViewController () {
+    CraftARCollectionManager* mCollectionManager;
+    CraftAROnDeviceIR* mOnDeviceIR;
+}
 
 @end
 
@@ -31,7 +36,39 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
+    [self loadOnDeviceCollection];
     
+}
+
+
+- (void) loadOnDeviceCollection {
+    __block MainScreenViewController* mySelf = self;
+    
+    // The collection manager allows to manage on-device collections
+    mCollectionManager = [CraftARCollectionManager sharedCollectionManager];
+    
+    // In this case, we downloaded an on-device Bundle
+    NSString* bundle = [[NSBundle mainBundle] pathForResource:@"augmentedreality" ofType:@"zip"];
+    
+    // We add the on-device bundle to the collection manager
+    [mCollectionManager addCollectionFromBundle:bundle withOnProgress:^(float progress) {
+        NSLog(@"Add collection to device progress: %f", progress);
+    } andOnSuccess:^(CraftAROnDeviceCollection *collection) {
+        [mySelf addCollectionForOnDeviceIR:collection];
+    } andOnError:^(CraftARError *error) {
+        NSLog(@"Error adding bundle %@", error.localizedDescription);
+    }];
+}
+
+- (void) addCollectionForOnDeviceIR: (CraftAROnDeviceCollection*) collection {
+    mOnDeviceIR = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
+    [mOnDeviceIR setCollection:(CraftAROnDeviceCollection *) collection withOnProgress:^(float progress) {
+        NSLog(@"Load collection for on-device IR progress: %f", progress);
+    } onSuccess:^{
+        NSLog(@"Ready for On-device IR");
+    } andOnError:^(NSError *error) {
+        NSLog(@"Error loading on-device collection for IR: %@", error.localizedDescription);
+    }];
 }
 
 - (IBAction)buttonPressed:(id)sender {

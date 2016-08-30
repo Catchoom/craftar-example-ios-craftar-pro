@@ -23,13 +23,13 @@
 
 #import "AR_fromCraftARViewController.h"
 
-#import <CraftARAugmentedRealitySDK/CraftARSDK.h>
-#import <CraftARAugmentedRealitySDK/CraftARCloudRecognition.h>
-#import <CraftARAugmentedRealitySDK/CraftARTracking.h>
+#import <CraftAROnDeviceIRandARSDK/CraftARSDK.h>
+#import <CraftAROnDeviceIRandARSDK/CraftAROnDeviceIR.h>
+#import <CraftAROnDeviceIRandARSDK/CraftARTracking.h>
 
 @interface AR_fromCraftARViewController () <CraftARSDKProtocol, CraftARContentEventsProtocol, SearchProtocol, CraftARTrackingEventsProtocol> {
     CraftARSDK *mSDK;
-    CraftARCloudRecognition *mCloudRecognition;
+    CraftAROnDeviceIR *mOnDeviceIR;
     CraftARTracking* mTracking;
 }
 @end
@@ -56,8 +56,8 @@
     mSDK.delegate = self;
     
     // Get the Cloud recognition module and set 'self' as delegate to receive the SearchProtocol callbacks
-    mCloudRecognition = [CraftARCloudRecognition sharedCloudImageRecognition];
-    mCloudRecognition.delegate = self;
+    mOnDeviceIR = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
+    mOnDeviceIR.delegate = self;
     
     // Get the tracking module and become delegate to receive tracking events
     mTracking = [CraftARTracking sharedTracking];
@@ -85,24 +85,18 @@
 
 - (void) didStartCapture {
     
-    // The SDK manages the Single shot search and the Finder Mode search, the cloud recognition's search
+    // The SDK manages the Single shot search and the Finder Mode search, the on-device recognition's search
     // controller is the delegate for doing the searches.
     // This needs to be done after the camera initialization
-    mSDK.searchControllerDelegate = mCloudRecognition.mSearchController;
+    mSDK.searchControllerDelegate = mOnDeviceIR.mSearchController;
     
-    // Set the colleciton we will search using the token.
-    __block AR_fromCraftARViewController* mySelf = self;
-    [mCloudRecognition setCollectionWithToken:@"augmentedreality" onSuccess:^{
-        NSLog(@"Ready to search!");
-        mySelf._scanOverlay.hidden = false;
-        
-        // The Search methods (Single shot search and Finder Mode) are controlled by
-        // the SDK. The searchControllerDelegate will receive the camera events and search
-        // with the picture or image frames coming from the camera.
-        [[CraftARSDK sharedCraftARSDK] startFinder];
-    } andOnError:^(NSError *error) {
-        NSLog(@"Error setting token: %@", error.localizedDescription);
-    }];
+    NSLog(@"Ready to search!");
+    self._scanOverlay.hidden = false;
+    
+    // The Search methods (Single shot search and Finder Mode) are controlled by
+    // the SDK. The searchControllerDelegate will receive the camera events and search
+    // with the picture or image frames coming from the camera.
+    [[CraftARSDK sharedCraftARSDK] startFinder];
 }
 
 - (void) didGetSearchResults:(NSArray *)results {

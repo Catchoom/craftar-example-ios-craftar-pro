@@ -7,13 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		A00319F71BBC330B009FE55E /* CraftARResourcesAR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A0FB2EC01BBC2BBF00E6A12F /* CraftARResourcesAR.bundle */; };
 		A00319F81BBC5639009FE55E /* AR_fromCraftARViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A039ABDB18A91F410050D6F7 /* AR_fromCraftARViewController.m */; };
 		A00319F91BBD1D9A009FE55E /* AR_ProgrammaticallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3E061847B0E4003D8D62 /* AR_ProgrammaticallyViewController.m */; };
 		A00319FB1BBD28F8009FE55E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A00319FA1BBD28F8009FE55E /* CoreLocation.framework */; };
 		A0031A001BBD36F0009FE55E /* On-device_Augmented_Reality.m in Sources */ = {isa = PBXBuildFile; fileRef = A00319FE1BBD36F0009FE55E /* On-device_Augmented_Reality.m */; };
 		A0031A011BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A00319FF1BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard */; };
-		A0031A051BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0031A041BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework */; };
 		A01F3D821845FA5A003D8D62 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A01F3D801845FA5A003D8D62 /* InfoPlist.strings */; };
 		A01F3D841845FA5A003D8D62 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D831845FA5A003D8D62 /* main.m */; };
 		A01F3D881845FA5A003D8D62 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A01F3D871845FA5A003D8D62 /* AppDelegate.m */; };
@@ -38,6 +36,10 @@
 		A039ABE418AA6CC00050D6F7 /* AR programmatically.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A039ABE318AA6CC00050D6F7 /* AR programmatically.jpg */; };
 		A03F93471990D270003ED8B1 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A03F93461990D270003ED8B1 /* libc++.dylib */; };
 		A053E8DC1A24817F00A30C49 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A053E8DB1A24817F00A30C49 /* QuartzCore.framework */; };
+		A07E0A9F1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07E0A9B1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework */; };
+		A07E0AA01D75C437009DC3A9 /* CraftARResourcesAR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A07E0A9C1D75C437009DC3A9 /* CraftARResourcesAR.bundle */; };
+		A07E0AA11D75C437009DC3A9 /* CraftARResourcesODIR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A07E0A9D1D75C437009DC3A9 /* CraftARResourcesODIR.bundle */; };
+		A07E0AA21D75C437009DC3A9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07E0A9E1D75C437009DC3A9 /* Pods.framework */; };
 		A084A2FC1875BD1100EF452B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A084A2FB1875BD1100EF452B /* Main.storyboard */; };
 		A0ADF5131BF6294500FD9E0A /* augmentedreality.zip in Resources */ = {isa = PBXBuildFile; fileRef = A0ADF5121BF6294500FD9E0A /* augmentedreality.zip */; };
 		A0D096821855E42100D231F0 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096811855E42100D231F0 /* MobileCoreServices.framework */; };
@@ -45,7 +47,6 @@
 		A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096871855E45000D231F0 /* AVFoundation.framework */; };
 		A0D0968A1855E46C00D231F0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0D096891855E46C00D231F0 /* CoreMedia.framework */; };
 		A0F1DF2F184E5269006E20A0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0F1DF2E184E5269006E20A0 /* Images.xcassets */; };
-		C0B1D8461A37595100C1904D /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0B1D8441A37595100C1904D /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -66,7 +67,6 @@
 		A00319FD1BBD36F0009FE55E /* On-device_Augmented_Reality.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "On-device_Augmented_Reality.h"; path = "Example 4 - On-device Augmented Reality/On-device_Augmented_Reality.h"; sourceTree = "<group>"; };
 		A00319FE1BBD36F0009FE55E /* On-device_Augmented_Reality.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "On-device_Augmented_Reality.m"; path = "Example 4 - On-device Augmented Reality/On-device_Augmented_Reality.m"; sourceTree = "<group>"; };
 		A00319FF1BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = "On-device_Augmented_Reality.storyboard"; path = "Example 4 - On-device Augmented Reality/On-device_Augmented_Reality.storyboard"; sourceTree = "<group>"; };
-		A0031A041BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CraftARAugmentedRealitySDK.framework; path = CraftARSDK_Examples/ExternalFrameworks/CraftARAugmentedRealitySDK.framework; sourceTree = "<group>"; };
 		A01F3D741845FA5A003D8D62 /* CraftARSDK_Examples.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CraftARSDK_Examples.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A01F3D7F1845FA5A003D8D62 /* CraftARSDK_Examples-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CraftARSDK_Examples-Info.plist"; sourceTree = "<group>"; };
 		A01F3D811845FA5A003D8D62 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -101,6 +101,10 @@
 		A039ABE318AA6CC00050D6F7 /* AR programmatically.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "AR programmatically.jpg"; path = "Reference images/AR programmatically.jpg"; sourceTree = "<group>"; };
 		A03F93461990D270003ED8B1 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A053E8DB1A24817F00A30C49 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A07E0A9B1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CraftAROnDeviceIRandARSDK.framework; path = CraftARSDK_Examples/ExternalFrameworks/CraftAROnDeviceIRandARSDK.framework; sourceTree = "<group>"; };
+		A07E0A9C1D75C437009DC3A9 /* CraftARResourcesAR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CraftARResourcesAR.bundle; path = CraftARSDK_Examples/ExternalFrameworks/CraftARResourcesAR.bundle; sourceTree = "<group>"; };
+		A07E0A9D1D75C437009DC3A9 /* CraftARResourcesODIR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CraftARResourcesODIR.bundle; path = CraftARSDK_Examples/ExternalFrameworks/CraftARResourcesODIR.bundle; sourceTree = "<group>"; };
+		A07E0A9E1D75C437009DC3A9 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = CraftARSDK_Examples/ExternalFrameworks/Pods.framework; sourceTree = "<group>"; };
 		A084A2FB1875BD1100EF452B /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		A0ADF5121BF6294500FD9E0A /* augmentedreality.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = augmentedreality.zip; sourceTree = "<group>"; };
 		A0D096811855E42100D231F0 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
@@ -109,8 +113,6 @@
 		A0D096871855E45000D231F0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A0D096891855E46C00D231F0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A0F1DF2E184E5269006E20A0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		A0FB2EC01BBC2BBF00E6A12F /* CraftARResourcesAR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CraftARResourcesAR.bundle; path = CraftARSDK_Examples/ExternalFrameworks/CraftARResourcesAR.bundle; sourceTree = "<group>"; };
-		C0B1D8441A37595100C1904D /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = CraftARSDK_Examples/ExternalFrameworks/Pods.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,13 +121,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				A00319FB1BBD28F8009FE55E /* CoreLocation.framework in Frameworks */,
-				C0B1D8461A37595100C1904D /* Pods.framework in Frameworks */,
 				A053E8DC1A24817F00A30C49 /* QuartzCore.framework in Frameworks */,
+				A07E0A9F1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework in Frameworks */,
 				A03F93471990D270003ED8B1 /* libc++.dylib in Frameworks */,
 				A0D0968A1855E46C00D231F0 /* CoreMedia.framework in Frameworks */,
 				A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */,
+				A07E0AA21D75C437009DC3A9 /* Pods.framework in Frameworks */,
 				A0D096841855E42F00D231F0 /* SystemConfiguration.framework in Frameworks */,
-				A0031A051BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework in Frameworks */,
 				A0D096821855E42100D231F0 /* MobileCoreServices.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,9 +148,10 @@
 		A01F3D6B1845FA5A003D8D62 = {
 			isa = PBXGroup;
 			children = (
-				A0031A041BBD4889009FE55E /* CraftARAugmentedRealitySDK.framework */,
-				A0FB2EC01BBC2BBF00E6A12F /* CraftARResourcesAR.bundle */,
-				C0B1D8441A37595100C1904D /* Pods.framework */,
+				A07E0A9B1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework */,
+				A07E0A9C1D75C437009DC3A9 /* CraftARResourcesAR.bundle */,
+				A07E0A9D1D75C437009DC3A9 /* CraftARResourcesODIR.bundle */,
+				A07E0A9E1D75C437009DC3A9 /* Pods.framework */,
 				A01F3D7D1845FA5A003D8D62 /* CraftARSDK_Examples */,
 				A01F3D761845FA5A003D8D62 /* Frameworks */,
 				A01F3D751845FA5A003D8D62 /* Products */,
@@ -181,9 +184,9 @@
 		A01F3D7D1845FA5A003D8D62 /* CraftARSDK_Examples */ = {
 			isa = PBXGroup;
 			children = (
-				A01F3E011847B0E4003D8D62 /* Example 1 - AR loaded programmatically */,
-				A01F3DD318478B72003D8D62 /* Example 2 - AR from CraftAR */,
-				A039ABAD189FE2150050D6F7 /* Example 3 - Recognition only */,
+				A01F3E011847B0E4003D8D62 /* Example 1 - On-device IR + AR prgrammatically */,
+				A01F3DD318478B72003D8D62 /* Example 2 - On-device IR and AR */,
+				A039ABAD189FE2150050D6F7 /* Example 3 - On-device recognition only */,
 				A00319FC1BBD309A009FE55E /* Example 4 - On-device Augmented Reality */,
 				A01F3D861845FA5A003D8D62 /* AppDelegate.h */,
 				A01F3D871845FA5A003D8D62 /* AppDelegate.m */,
@@ -228,33 +231,36 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		A01F3DD318478B72003D8D62 /* Example 2 - AR from CraftAR */ = {
+		A01F3DD318478B72003D8D62 /* Example 2 - On-device IR and AR */ = {
 			isa = PBXGroup;
 			children = (
 				A039ABDC18A91F410050D6F7 /* AR_fromCraftAR.storyboard */,
 				A039ABDA18A91F410050D6F7 /* AR_fromCraftARViewController.h */,
 				A039ABDB18A91F410050D6F7 /* AR_fromCraftARViewController.m */,
 			);
+			name = "Example 2 - On-device IR and AR";
 			path = "Example 2 - AR from CraftAR";
 			sourceTree = "<group>";
 		};
-		A01F3E011847B0E4003D8D62 /* Example 1 - AR loaded programmatically */ = {
+		A01F3E011847B0E4003D8D62 /* Example 1 - On-device IR + AR prgrammatically */ = {
 			isa = PBXGroup;
 			children = (
 				A01F3E041847B0E4003D8D62 /* AR_Programmatically.storyboard */,
 				A01F3E051847B0E4003D8D62 /* AR_ProgrammaticallyViewController.h */,
 				A01F3E061847B0E4003D8D62 /* AR_ProgrammaticallyViewController.m */,
 			);
+			name = "Example 1 - On-device IR + AR prgrammatically";
 			path = "Example 1 - AR loaded programmatically";
 			sourceTree = "<group>";
 		};
-		A039ABAD189FE2150050D6F7 /* Example 3 - Recognition only */ = {
+		A039ABAD189FE2150050D6F7 /* Example 3 - On-device recognition only */ = {
 			isa = PBXGroup;
 			children = (
 				A039ABAF189FE2490050D6F7 /* CloudRecognition.storyboard */,
 				A039ABB0189FE2490050D6F7 /* CloudRecognitionOneShotViewController.h */,
 				A039ABB1189FE2490050D6F7 /* CloudRecognitionOneShotViewController.m */,
 			);
+			name = "Example 3 - On-device recognition only";
 			path = "Example 3 - Recognition only";
 			sourceTree = "<group>";
 		};
@@ -326,6 +332,8 @@
 				A039ABCB18A4F0510050D6F7 /* craftAR_logo.png in Resources */,
 				A039ABDE18A91F410050D6F7 /* AR_fromCraftAR.storyboard in Resources */,
 				A0031A011BBD36F0009FE55E /* On-device_Augmented_Reality.storyboard in Resources */,
+				A07E0AA01D75C437009DC3A9 /* CraftARResourcesAR.bundle in Resources */,
+				A07E0AA11D75C437009DC3A9 /* CraftARResourcesODIR.bundle in Resources */,
 				A039ABE218AA6C450050D6F7 /* AR_programmatically_content.png in Resources */,
 				A039ABD018A4F0510050D6F7 /* questionMark.png in Resources */,
 				A039ABC818A4F0510050D6F7 /* craftAR_c.png in Resources */,
@@ -342,7 +350,6 @@
 				A039ABCF18A4F0510050D6F7 /* play@2x.png in Resources */,
 				A039ABD118A4F0510050D6F7 /* questionMark@2x.png in Resources */,
 				A039ABC918A4F0510050D6F7 /* craftAR_logo-iPad.png in Resources */,
-				A00319F71BBC330B009FE55E /* CraftARResourcesAR.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

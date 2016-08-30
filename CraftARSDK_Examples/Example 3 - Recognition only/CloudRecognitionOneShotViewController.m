@@ -6,13 +6,13 @@
 //
 
 #import "CloudRecognitionOneShotViewController.h"
-#import <CraftARAugmentedRealitySDK/CraftARSDK.h>
-#import <CraftARAugmentedRealitySDK/CraftARCloudRecognition.h>
+#import <CraftAROnDeviceIRandARSDK/CraftARSDK.h>
+#import <CraftAROnDeviceIRandARSDK/CraftAROnDeviceIR.h>
 
 
 @interface CloudRecognitionOneShotViewController () <CraftARSDKProtocol, CraftARContentEventsProtocol, SearchProtocol> {
     CraftARSDK *mSDK;
-    CraftARCloudRecognition *mCloudRecognition;
+    CraftAROnDeviceIR *mOnDeviceIR;
 }
 
 @end
@@ -39,8 +39,8 @@
     mSDK.delegate = self;
     
     // Get the Cloud recognition module and set 'self' as delegate to receive the SearchProtocol callbacks
-    mCloudRecognition = [CraftARCloudRecognition sharedCloudImageRecognition];
-    mCloudRecognition.delegate = self;
+    mOnDeviceIR = [CraftAROnDeviceIR sharedCraftAROnDeviceIR];
+    mOnDeviceIR.delegate = self;
 }
 
 - (void) viewWillAppear:(BOOL) animated {
@@ -66,14 +66,9 @@
     // The SDK manages the Single shot search and the Finder Mode search, the cloud recognition's
     // search controller is the delegate for doing the searches.
     // This needs to be done after the camera initialization
-    mSDK.searchControllerDelegate = mCloudRecognition.mSearchController;
+    mSDK.searchControllerDelegate = mOnDeviceIR.mSearchController;
     
-    // Set the colleciton we will search using the token.
-    [mCloudRecognition setCollectionWithToken:@"augmentedreality" onSuccess:^{
-        NSLog(@"Ready to search!");
-    } andOnError:^(NSError *error) {
-        NSLog(@"Error setting token: %@", error.localizedDescription);
-    }];
+    NSLog(@"Ready to search!");
 }
 
 - (IBAction)snapPhotoToSearch:(id)sender {
