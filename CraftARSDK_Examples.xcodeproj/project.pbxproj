@@ -36,7 +36,7 @@
 		A039ABE418AA6CC00050D6F7 /* AR programmatically.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A039ABE318AA6CC00050D6F7 /* AR programmatically.jpg */; };
 		A03F93471990D270003ED8B1 /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A03F93461990D270003ED8B1 /* libc++.dylib */; };
 		A053E8DC1A24817F00A30C49 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A053E8DB1A24817F00A30C49 /* QuartzCore.framework */; };
-		A07E0A9F1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07E0A9B1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework */; };
+		A07E0A9F1D75C437009DC3A9 /* CraftARProSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07E0A9B1D75C437009DC3A9 /* CraftARProSDK.framework */; };
 		A07E0AA01D75C437009DC3A9 /* CraftARResourcesAR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A07E0A9C1D75C437009DC3A9 /* CraftARResourcesAR.bundle */; };
 		A07E0AA11D75C437009DC3A9 /* CraftARResourcesODIR.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A07E0A9D1D75C437009DC3A9 /* CraftARResourcesODIR.bundle */; };
 		A07E0AA21D75C437009DC3A9 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A07E0A9E1D75C437009DC3A9 /* Pods.framework */; };
@@ -101,7 +101,7 @@
 		A039ABE318AA6CC00050D6F7 /* AR programmatically.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "AR programmatically.jpg"; path = "Reference images/AR programmatically.jpg"; sourceTree = "<group>"; };
 		A03F93461990D270003ED8B1 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		A053E8DB1A24817F00A30C49 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		A07E0A9B1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CraftAROnDeviceIRandARSDK.framework; path = CraftARSDK_Examples/ExternalFrameworks/CraftAROnDeviceIRandARSDK.framework; sourceTree = "<group>"; };
+		A07E0A9B1D75C437009DC3A9 /* CraftARProSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CraftARProSDK.framework; path = CraftARSDK_Examples/ExternalFrameworks/CraftARProSDK.framework; sourceTree = "<group>"; };
 		A07E0A9C1D75C437009DC3A9 /* CraftARResourcesAR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CraftARResourcesAR.bundle; path = CraftARSDK_Examples/ExternalFrameworks/CraftARResourcesAR.bundle; sourceTree = "<group>"; };
 		A07E0A9D1D75C437009DC3A9 /* CraftARResourcesODIR.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = CraftARResourcesODIR.bundle; path = CraftARSDK_Examples/ExternalFrameworks/CraftARResourcesODIR.bundle; sourceTree = "<group>"; };
 		A07E0A9E1D75C437009DC3A9 /* Pods.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods.framework; path = CraftARSDK_Examples/ExternalFrameworks/Pods.framework; sourceTree = "<group>"; };
@@ -122,7 +122,7 @@
 			files = (
 				A00319FB1BBD28F8009FE55E /* CoreLocation.framework in Frameworks */,
 				A053E8DC1A24817F00A30C49 /* QuartzCore.framework in Frameworks */,
-				A07E0A9F1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework in Frameworks */,
+				A07E0A9F1D75C437009DC3A9 /* CraftARProSDK.framework in Frameworks */,
 				A03F93471990D270003ED8B1 /* libc++.dylib in Frameworks */,
 				A0D0968A1855E46C00D231F0 /* CoreMedia.framework in Frameworks */,
 				A0D096881855E45000D231F0 /* AVFoundation.framework in Frameworks */,
@@ -148,7 +148,7 @@
 		A01F3D6B1845FA5A003D8D62 = {
 			isa = PBXGroup;
 			children = (
-				A07E0A9B1D75C437009DC3A9 /* CraftAROnDeviceIRandARSDK.framework */,
+				A07E0A9B1D75C437009DC3A9 /* CraftARProSDK.framework */,
 				A07E0A9C1D75C437009DC3A9 /* CraftARResourcesAR.bundle */,
 				A07E0A9D1D75C437009DC3A9 /* CraftARResourcesODIR.bundle */,
 				A07E0A9E1D75C437009DC3A9 /* Pods.framework */,
