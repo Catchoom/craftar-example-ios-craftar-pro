@@ -23,9 +23,9 @@
 
 #import "AR_fromCraftARViewController.h"
 
-#import <CraftAROnDeviceIRandARSDK/CraftARSDK.h>
-#import <CraftAROnDeviceIRandARSDK/CraftAROnDeviceIR.h>
-#import <CraftAROnDeviceIRandARSDK/CraftARTracking.h>
+#import <CraftARPRoSDK/CraftARSDK.h>
+#import <CraftARPRoSDK/CraftAROnDeviceIR.h>
+#import <CraftARPRoSDK/CraftARTracking.h>
 
 @interface AR_fromCraftARViewController () <CraftARSDKProtocol, CraftARContentEventsProtocol, SearchProtocol, CraftARTrackingEventsProtocol> {
     CraftARSDK *mSDK;

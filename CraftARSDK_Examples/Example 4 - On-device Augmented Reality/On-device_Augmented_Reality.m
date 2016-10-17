@@ -23,9 +23,9 @@
 
 #import "On-Device_Augmented_Reality.h"
 
-#import <CraftAROnDeviceIRandARSDK/CraftARSDK.h>
-#import <CraftAROnDeviceIRandARSDK/CraftARCollectionManager.h>
-#import <CraftAROnDeviceIRandARSDK/CraftARTracking.h>
+#import <CraftARPRoSDK/CraftARSDK.h>
+#import <CraftARPRoSDK/CraftARCollectionManager.h>
+#import <CraftARPRoSDK/CraftARTracking.h>
 
 @interface OnDeviceAugmentedReality () <CraftARSDKProtocol, CraftARContentEventsProtocol, CraftARTrackingEventsProtocol> {
     CraftARSDK *mSDK;

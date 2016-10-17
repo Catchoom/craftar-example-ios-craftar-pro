@@ -6,8 +6,8 @@
 //
 
 #import "CloudRecognitionOneShotViewController.h"
-#import <CraftAROnDeviceIRandARSDK/CraftARSDK.h>
-#import <CraftAROnDeviceIRandARSDK/CraftAROnDeviceIR.h>
+#import <CraftARPRoSDK/CraftARSDK.h>
+#import <CraftARPRoSDK/CraftAROnDeviceIR.h>
 
 
 @interface CloudRecognitionOneShotViewController () <CraftARSDKProtocol, CraftARContentEventsProtocol, SearchProtocol> {

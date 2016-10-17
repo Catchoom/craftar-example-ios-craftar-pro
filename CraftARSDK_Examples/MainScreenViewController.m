@@ -21,8 +21,8 @@
 // DEALINGS IN THE SOFTWARE.
 
 #import "MainScreenViewController.h"
-#import <CraftAROnDeviceIRandARSDK/CraftARCollectionManager.h>
-#import <CraftAROnDeviceIRandARSDK/CraftAROnDeviceIR.h>
+#import <CraftARPRoSDK/CraftARCollectionManager.h>
+#import <CraftARPRoSDK/CraftAROnDeviceIR.h>
 
 @interface MainScreenViewController () {
     CraftARCollectionManager* mCollectionManager;

@@ -22,10 +22,10 @@
 
 
 #import "AR_ProgrammaticallyViewController.h"
-#import <CraftAROnDeviceIRandARSDK/CraftARSDK.h>
-#import <CraftAROnDeviceIRandARSDK/CraftAROnDeviceIR.h>
-#import <CraftAROnDeviceIRandARSDK/CraftARTracking.h>
-#import <CraftAROnDeviceIRandARSDK/CraftARTrackingContentImage.h>
+#import <CraftARPRoSDK/CraftARSDK.h>
+#import <CraftARPRoSDK/CraftAROnDeviceIR.h>
+#import <CraftARPRoSDK/CraftARTracking.h>
+#import <CraftARPRoSDK/CraftARTrackingContentImage.h>
 
 @interface AR_ProgrammaticallyViewController ()<CraftARSDKProtocol, CraftARContentEventsProtocol, SearchProtocol, CraftARTrackingEventsProtocol> {
     CraftARSDK *mSDK;
