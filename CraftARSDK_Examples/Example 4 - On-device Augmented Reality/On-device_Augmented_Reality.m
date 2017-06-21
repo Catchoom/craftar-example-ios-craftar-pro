@@ -21,7 +21,7 @@
 // DEALINGS IN THE SOFTWARE.
 
 
-#import "On-Device_Augmented_Reality.h"
+#import "On-device_Augmented_Reality.h"
 
 #import <CraftARPRoSDK/CraftARSDK.h>
 #import <CraftARPRoSDK/CraftARCollectionManager.h>
