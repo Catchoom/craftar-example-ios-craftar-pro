@@ -25,8 +25,7 @@ project and hit the run button.
 To build the project or use the library, you will need XCode 7 or newer,
 and at least the iOS 8.0 SDK.
 
-This example works with the Catchoom SDK version 4. If you have an earlier version (3), you can still find the examples in [this branch](https://github.com/Catchoom/craftar-example-ios/tree/sdk-v3).
-
+This example works with the CraftAR Pro SDK version 2.0+.
 
 ### Integrate the SDK in your own project
 
